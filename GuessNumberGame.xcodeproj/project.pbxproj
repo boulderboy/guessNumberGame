@@ -9,21 +9,35 @@
 /* Begin PBXBuildFile section */
 		04DF9187296D5372004A0962 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF9186296D5372004A0962 /* AppDelegate.swift */; };
 		04DF9189296D5372004A0962 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF9188296D5372004A0962 /* SceneDelegate.swift */; };
-		04DF918B296D5372004A0962 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF918A296D5372004A0962 /* ViewController.swift */; };
+		04DF918B296D5372004A0962 /* GameStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF918A296D5372004A0962 /* GameStartViewController.swift */; };
 		04DF918E296D5372004A0962 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DF918C296D5372004A0962 /* Main.storyboard */; };
 		04DF9190296D5374004A0962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04DF918F296D5374004A0962 /* Assets.xcassets */; };
 		04DF9193296D5374004A0962 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DF9191296D5374004A0962 /* LaunchScreen.storyboard */; };
+		04DF919B296D5601004A0962 /* SelectFirstRoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF919A296D5601004A0962 /* SelectFirstRoundViewController.swift */; };
+		04DF919D296D5949004A0962 /* ComputerGuessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF919C296D5949004A0962 /* ComputerGuessViewController.swift */; };
+		04DF919F296D5F54004A0962 /* UserGuessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF919E296D5F54004A0962 /* UserGuessViewController.swift */; };
+		04DF91A1296D6453004A0962 /* SecretNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF91A0296D6453004A0962 /* SecretNumber.swift */; };
+		04DF91A3296D67BD004A0962 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF91A2296D67BD004A0962 /* GameModel.swift */; };
+		04DF91A529703A73004A0962 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF91A429703A73004A0962 /* Factory.swift */; };
+		04DF91A729703ACA004A0962 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF91A629703ACA004A0962 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		04DF9183296D5372004A0962 /* GuessNumberGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessNumberGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DF9186296D5372004A0962 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04DF9188296D5372004A0962 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		04DF918A296D5372004A0962 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		04DF918A296D5372004A0962 /* GameStartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartViewController.swift; sourceTree = "<group>"; };
 		04DF918D296D5372004A0962 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		04DF918F296D5374004A0962 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04DF9192296D5374004A0962 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04DF9194296D5374004A0962 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04DF919A296D5601004A0962 /* SelectFirstRoundViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectFirstRoundViewController.swift; sourceTree = "<group>"; };
+		04DF919C296D5949004A0962 /* ComputerGuessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComputerGuessViewController.swift; sourceTree = "<group>"; };
+		04DF919E296D5F54004A0962 /* UserGuessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGuessViewController.swift; sourceTree = "<group>"; };
+		04DF91A0296D6453004A0962 /* SecretNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretNumber.swift; sourceTree = "<group>"; };
+		04DF91A2296D67BD004A0962 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		04DF91A429703A73004A0962 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
+		04DF91A629703ACA004A0962 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +70,46 @@
 		04DF9185296D5372004A0962 /* GuessNumberGame */ = {
 			isa = PBXGroup;
 			children = (
-				04DF9186296D5372004A0962 /* AppDelegate.swift */,
-				04DF9188296D5372004A0962 /* SceneDelegate.swift */,
-				04DF918A296D5372004A0962 /* ViewController.swift */,
-				04DF918C296D5372004A0962 /* Main.storyboard */,
-				04DF918F296D5374004A0962 /* Assets.xcassets */,
-				04DF9191296D5374004A0962 /* LaunchScreen.storyboard */,
+				04DF91A82971A0D0004A0962 /* Model */,
+				04DF91A92971A0E5004A0962 /* Controllers */,
+				04DF91AA2971A0F9004A0962 /* Resources */,
 				04DF9194296D5374004A0962 /* Info.plist */,
 			);
 			path = GuessNumberGame;
+			sourceTree = "<group>";
+		};
+		04DF91A82971A0D0004A0962 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04DF91A429703A73004A0962 /* Factory.swift */,
+				04DF91A0296D6453004A0962 /* SecretNumber.swift */,
+				04DF91A2296D67BD004A0962 /* GameModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04DF91A92971A0E5004A0962 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				04DF918A296D5372004A0962 /* GameStartViewController.swift */,
+				04DF919C296D5949004A0962 /* ComputerGuessViewController.swift */,
+				04DF919E296D5F54004A0962 /* UserGuessViewController.swift */,
+				04DF91A629703ACA004A0962 /* ResultViewController.swift */,
+				04DF919A296D5601004A0962 /* SelectFirstRoundViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		04DF91AA2971A0F9004A0962 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				04DF918C296D5372004A0962 /* Main.storyboard */,
+				04DF9186296D5372004A0962 /* AppDelegate.swift */,
+				04DF9188296D5372004A0962 /* SceneDelegate.swift */,
+				04DF9191296D5374004A0962 /* LaunchScreen.storyboard */,
+				04DF918F296D5374004A0962 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +183,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04DF918B296D5372004A0962 /* ViewController.swift in Sources */,
+				04DF919D296D5949004A0962 /* ComputerGuessViewController.swift in Sources */,
+				04DF919F296D5F54004A0962 /* UserGuessViewController.swift in Sources */,
+				04DF918B296D5372004A0962 /* GameStartViewController.swift in Sources */,
 				04DF9187296D5372004A0962 /* AppDelegate.swift in Sources */,
+				04DF919B296D5601004A0962 /* SelectFirstRoundViewController.swift in Sources */,
+				04DF91A729703ACA004A0962 /* ResultViewController.swift in Sources */,
+				04DF91A529703A73004A0962 /* Factory.swift in Sources */,
+				04DF91A3296D67BD004A0962 /* GameModel.swift in Sources */,
 				04DF9189296D5372004A0962 /* SceneDelegate.swift in Sources */,
+				04DF91A1296D6453004A0962 /* SecretNumber.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
