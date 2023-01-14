@@ -4,7 +4,7 @@
 //
 //  Created by Mac on 10.01.2023.
 //
-
+// swiftlint:disable all
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let root = factory.create(controller: .gameStartView)
         let navController = UINavigationController(rootViewController: root)
         window?.rootViewController = navController
-        
+
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

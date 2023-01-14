@@ -9,33 +9,31 @@ import UIKit
 
 final class ComputerGuessViewController: UIViewController {
     
- //   private let secretNumber = SecretNumber(secretNumber: Int.random(in: 0...10000))
-    let game: GameModel
-    let isFirstRound: Bool
-    let factory: Factory
-    
+    private let game: GameModel
+    private let isFirstRound: Bool
+    private let factory: Factory
+
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Угадывает компьютер!"
         return label
     }()
-    
+
     private let guessLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Вы загадали число: "
         return label
     }()
-    
+
     private let randomNumberLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = String(Int.random(in: 0...10000))
         return label
     }()
-    
-    private let lessButton: UIButton = {
+
+    private lazy var lessButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("<", for: .normal)
@@ -45,8 +43,8 @@ final class ComputerGuessViewController: UIViewController {
         button.addTarget(self, action: #selector(lessButtonHandler), for: .touchUpInside)
         return button
     }()
-    
-    private let equalButton: UIButton = {
+
+    private lazy var equalButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("=", for: .normal)
@@ -56,8 +54,8 @@ final class ComputerGuessViewController: UIViewController {
         button.addTarget(self, action: #selector(equalButtonHandler), for: .touchUpInside)
         return button
     }()
-    
-    private let greaterButton: UIButton = {
+
+    private lazy var greaterButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(">", for: .normal)
@@ -67,8 +65,8 @@ final class ComputerGuessViewController: UIViewController {
         button.addTarget(self, action: #selector(greaterButtonHandler), for: .touchUpInside)
         return button
     }()
-    
-    private let nextButton: UIButton = {
+
+    private lazy var nextButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Далее", for: .normal)
@@ -79,7 +77,7 @@ final class ComputerGuessViewController: UIViewController {
         button.isHidden = true
         return button
     }()
-    
+
     private let winningLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -87,25 +85,26 @@ final class ComputerGuessViewController: UIViewController {
         label.isHidden = true
         return label
     }()
-    
+
     init(game: GameModel, isFirstRound: Bool, factory: Factory) {
         self.game = game
         self.isFirstRound = isFirstRound
         self.factory = factory
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         navigationItem.hidesBackButton = true
         setupSubviews()
+        randomNumberLabel.text = String(game.getRandomGuess())
     }
-    
+
     private func setupSubviews() {
         view.addSubview(titleLabel)
         view.addSubview(guessLabel)
@@ -138,21 +137,21 @@ final class ComputerGuessViewController: UIViewController {
             nextButton.widthAnchor.constraint(equalToConstant: 150)
         ])
     }
-    
+
     @objc
     private func lessButtonHandler() {
-        game.secretNumber.max = Int(randomNumberLabel.text ?? "10000") ?? 10000
-        randomNumberLabel.text = String(Int.random(in: game.secretNumber.min...game.secretNumber.max))
+        game.setNew(max: Int(randomNumberLabel.text ?? "0") ?? 0)
+        randomNumberLabel.text = String(game.getRandomGuess())
         game.computerAttempts += 1
     }
-    
+
     @objc
     private func greaterButtonHandler() {
-        game.secretNumber.min = Int(randomNumberLabel.text ?? "0") ?? 0
-        randomNumberLabel.text = String(Int.random(in: game.secretNumber.min...game.secretNumber.max))
+        game.setNew(min: Int(randomNumberLabel.text ?? "0") ?? 0)
+        randomNumberLabel.text = String(game.getRandomGuess())
         game.computerAttempts += 1
     }
-    
+
     @objc
     private func equalButtonHandler() {
         winningLabel.isHidden = false

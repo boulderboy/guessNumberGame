@@ -8,10 +8,8 @@
 import UIKit
 
 class GameStartViewController: UIViewController {
-    
-    let factory = Factory()
 
-    private let startNewGameButton: UIButton = {
+    private lazy var startNewGameButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Начать игру", for: .normal)
@@ -22,7 +20,7 @@ class GameStartViewController: UIViewController {
         button.addTarget(self, action: #selector(startButtonHandler), for: .touchUpInside)
         return button
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -36,12 +34,12 @@ class GameStartViewController: UIViewController {
             startNewGameButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
-    
+
     @objc
     private func startButtonHandler() {
+        let factory = Factory()
         let viewController = factory.create(controller: .selectView)
         navigationController?.pushViewController(viewController, animated: true)
     }
 
 }
-

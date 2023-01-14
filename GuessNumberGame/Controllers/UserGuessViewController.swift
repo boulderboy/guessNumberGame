@@ -8,24 +8,24 @@
 import UIKit
 
 final class UserGuessViewController: UIViewController {
-    
-    var game: GameModel
-    let isFirstRound: Bool
-    var factory: Factory
-    
+
+    private let game: GameModel
+    private let isFirstRound: Bool
+    private let factory: Factory
+
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Компьютер загадал число:"
         return label
     }()
-    
+
     private let answersScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
-    
+
     private let guessTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -33,8 +33,8 @@ final class UserGuessViewController: UIViewController {
         textField.borderStyle = .roundedRect
         return textField
     }()
-    
-    private let tryButton: UIButton = {
+
+    private lazy var tryButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Try!", for: .normal)
@@ -44,8 +44,8 @@ final class UserGuessViewController: UIViewController {
         button.addTarget(self, action: #selector(tryButtonHandler), for: .touchUpInside)
         return button
     }()
-    
-    private let nextButton: UIButton = {
+
+    private lazy var nextButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Далее", for: .normal)
@@ -56,7 +56,7 @@ final class UserGuessViewController: UIViewController {
         button.isHidden = true
         return button
     }()
-    
+
     private let hintLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -64,24 +64,24 @@ final class UserGuessViewController: UIViewController {
         label.isHidden = true
         return label
     }()
-    
+
     private let hintText: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+
     init(game: GameModel, isFirstRound: Bool, factory: Factory) {
         self.game = game
         self.isFirstRound = isFirstRound
         self.factory = factory
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Ваша очередь угадывать"
@@ -89,7 +89,7 @@ final class UserGuessViewController: UIViewController {
         navigationItem.hidesBackButton = true
         setupViews()
     }
-    
+
     @objc
     private func tryButtonHandler() {
         hintLabel.isHidden = false
@@ -109,7 +109,7 @@ final class UserGuessViewController: UIViewController {
         }
         print(game.secretNumber.secretNumber)
     }
-    
+
     private func setupViews() {
         view.addSubview(titleLabel)
         view.addSubview(guessTextField)
@@ -117,7 +117,7 @@ final class UserGuessViewController: UIViewController {
         view.addSubview(hintLabel)
         view.addSubview(hintText)
         view.addSubview(nextButton)
-        
+
         NSLayoutConstraint.activate([
             titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
@@ -136,7 +136,7 @@ final class UserGuessViewController: UIViewController {
             nextButton.widthAnchor.constraint(equalToConstant: 100)
         ])
     }
-    
+
     @objc
     private func nextButtonHandler() {
         let viewController = isFirstRound

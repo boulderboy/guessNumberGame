@@ -12,13 +12,16 @@ final class GameModel {
     var currentRound = 1
     var computerAttempts: Int = 1
     var userAttempts: Int = 0
-    init(secretNumber: SecretNumber, currentRound: Int = 1, computerAttempts: Int = 1, userAttempts: Int = 0) {
+    init(secretNumber: SecretNumber,
+         currentRound: Int = 1,
+         computerAttempts: Int = 1,
+         userAttempts: Int = 0) {
         self.secretNumber = secretNumber
         self.currentRound = currentRound
         self.computerAttempts = computerAttempts
         self.userAttempts = userAttempts
     }
-    
+
     func check(answer: Int) -> Answers {
         if answer == secretNumber.secretNumber {
             return .equal
@@ -27,5 +30,17 @@ final class GameModel {
         } else {
             return .less
         }
+    }
+
+    func getRandomGuess() -> Int {
+        Int.random(in: secretNumber.min...secretNumber.max)
+    }
+
+    func setNew(max: Int) {
+        secretNumber.max = max
+    }
+
+    func setNew(min: Int) {
+        secretNumber.min = min
     }
 }

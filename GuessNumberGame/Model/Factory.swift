@@ -16,9 +16,9 @@ enum ViewType {
 }
 
 final class Factory {
-    
-    let game = GameModel(secretNumber: SecretNumber(secretNumber: Int.random(in: 0...100)))
-    
+
+    private let game = GameModel(secretNumber: SecretNumber(secretNumber: Int.random(in: 0...100)))
+
     func create(controller: ViewType) -> UIViewController {
         var resultController: UIViewController
         switch controller {
@@ -27,11 +27,16 @@ final class Factory {
         case .selectView:
             resultController = SelectFirstRoundViewController(factory: self)
         case .computerGuessView(let isFirstRound):
-            resultController = ComputerGuessViewController(game: game, isFirstRound: isFirstRound, factory: self)
+            resultController = ComputerGuessViewController(game: game,
+                                                           isFirstRound: isFirstRound,
+                                                           factory: self)
         case .userGuessView(let isFirstRound):
-            resultController = UserGuessViewController(game: game, isFirstRound: isFirstRound, factory: self)
+            resultController = UserGuessViewController(game: game,
+                                                       isFirstRound: isFirstRound,
+                                                       factory: self)
         case .resultView:
-            resultController = ResultViewController(userAttempts: game.userAttempts, computerAttempts: game.computerAttempts)
+            resultController = ResultViewController(userAttempts: game.userAttempts,
+                                                    computerAttempts: game.computerAttempts)
         }
         return resultController
     }

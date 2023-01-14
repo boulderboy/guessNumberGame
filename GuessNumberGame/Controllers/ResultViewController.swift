@@ -8,23 +8,23 @@
 import UIKit
 
 final class ResultViewController: UIViewController {
-    
+
     private let userAttempts: Int
     private let computerAttempts: Int
-    
+
     init(userAttempts: Int, computerAttempts: Int) {
         self.userAttempts = userAttempts
         self.computerAttempts = computerAttempts
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     private let resultLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    private let newGameButoon: UIButton = {
+
+    private lazy var newGameButoon: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Сыграть еще!", for: .normal)
@@ -34,11 +34,11 @@ final class ResultViewController: UIViewController {
         button.addTarget(self, action: #selector(newGameButtonHandler), for: .touchUpInside)
         return button
     }()
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -50,7 +50,7 @@ final class ResultViewController: UIViewController {
         } else {
             resultLabel.text = "Ничья"
         }
-        
+
         setupViews()
     }
     private func setupViews() {
@@ -64,11 +64,9 @@ final class ResultViewController: UIViewController {
             newGameButoon.widthAnchor.constraint(equalToConstant: 150)
         ])
     }
-    
+
     @objc
     private func newGameButtonHandler() {
-        let viewController = GameStartViewController()
-        navigationController?.pushViewController(viewController, animated: true)
-
+        navigationController?.popToRootViewController(animated: false)
     }
 }

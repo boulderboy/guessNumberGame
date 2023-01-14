@@ -20,6 +20,7 @@
 		04DF91A3296D67BD004A0962 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF91A2296D67BD004A0962 /* GameModel.swift */; };
 		04DF91A529703A73004A0962 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF91A429703A73004A0962 /* Factory.swift */; };
 		04DF91A729703ACA004A0962 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DF91A629703ACA004A0962 /* ResultViewController.swift */; };
+		9A4D0B28C5DB89AC8450ED0D /* Pods_GuessNumberGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C823689B74805B860414D8 /* Pods_GuessNumberGame.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,9 @@
 		04DF91A2296D67BD004A0962 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		04DF91A429703A73004A0962 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
 		04DF91A629703ACA004A0962 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		60C823689B74805B860414D8 /* Pods_GuessNumberGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuessNumberGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE64F99FE2584E23CDA1FCE2 /* Pods-GuessNumberGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessNumberGame.debug.xcconfig"; path = "Target Support Files/Pods-GuessNumberGame/Pods-GuessNumberGame.debug.xcconfig"; sourceTree = "<group>"; };
+		BEA348625AD2BB2029F481A0 /* Pods-GuessNumberGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessNumberGame.release.xcconfig"; path = "Target Support Files/Pods-GuessNumberGame/Pods-GuessNumberGame.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A4D0B28C5DB89AC8450ED0D /* Pods_GuessNumberGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +61,8 @@
 			children = (
 				04DF9185296D5372004A0962 /* GuessNumberGame */,
 				04DF9184296D5372004A0962 /* Products */,
+				36E79B8EE1A36771AA24AFEE /* Pods */,
+				E79C4C5860E8FCE3D095AC75 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -112,6 +119,23 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		36E79B8EE1A36771AA24AFEE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BE64F99FE2584E23CDA1FCE2 /* Pods-GuessNumberGame.debug.xcconfig */,
+				BEA348625AD2BB2029F481A0 /* Pods-GuessNumberGame.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E79C4C5860E8FCE3D095AC75 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60C823689B74805B860414D8 /* Pods_GuessNumberGame.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04DF9197296D5374004A0962 /* Build configuration list for PBXNativeTarget "GuessNumberGame" */;
 			buildPhases = (
+				18505A83C247E044188D6EA9 /* [CP] Check Pods Manifest.lock */,
 				04DF917F296D5372004A0962 /* Sources */,
 				04DF9180296D5372004A0962 /* Frameworks */,
 				04DF9181296D5372004A0962 /* Resources */,
+				04DF91AB2971BA7F004A0962 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -177,6 +203,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04DF91AB2971BA7F004A0962 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		18505A83C247E044188D6EA9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GuessNumberGame-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		04DF917F296D5372004A0962 /* Sources */ = {
@@ -334,6 +403,7 @@
 		};
 		04DF9198296D5374004A0962 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE64F99FE2584E23CDA1FCE2 /* Pods-GuessNumberGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -361,6 +431,7 @@
 		};
 		04DF9199296D5374004A0962 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEA348625AD2BB2029F481A0 /* Pods-GuessNumberGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
